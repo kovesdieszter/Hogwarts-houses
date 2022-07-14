@@ -14,7 +14,8 @@ public class RoomMemory implements RoomDAO {
         this.rooms = rooms;
     }
 
-    public void addNewRoom(Room newRoom){
-        rooms.add(newRoom);
+    @Override
+    public Set<Room> getRooms() {
+        return rooms;
     }
 }
