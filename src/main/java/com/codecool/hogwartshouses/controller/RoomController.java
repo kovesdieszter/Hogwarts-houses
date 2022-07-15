@@ -28,7 +28,7 @@ public class RoomController {
     @PostMapping(value = "/rooms")
     public String addRoom(Model model){
         model.addAttribute("rooms", roomService.addRoom());
-        return "rooms";
+        return "redirect:";
     }
 
 }
