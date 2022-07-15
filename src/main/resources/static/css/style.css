@@ -23,3 +23,15 @@ button:hover {
     background-color: #c9e2e3;
     color: black;
 }
+
+table, th, td {
+    border: 1px solid;
+    text-align: center;
+    background: rgb(201, 226, 227, 0.5);
+}
+table {
+    width: 100%;
+    font-size: larger;
+    text-align: center;
+}
+
