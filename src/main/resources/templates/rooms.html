@@ -1,14 +1,37 @@
-
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Rooms</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link th:href="@{/css/greeting.css}" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tapestry&display=swap');
+    </style>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 <body th:style="'background: url(/img/background.jpg) no-repeat center center fixed;'">
-<p th:text="${rooms}"></p>
+<div>
+    <h1>Rooms</h1>
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Dummy</th>
+            <th scope="col">Dummy</th>
+            <th scope="col">Dummy</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="room : ${rooms}">
+            <th scope="row" th:text="${room.roomID}"></th>
+            <td th:text="${room}"></td>
+            <td>dummy</td>
+            <td>dummy</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
