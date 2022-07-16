@@ -12,7 +12,7 @@ public class Room {
     Random random = new Random();
     private static int helperID = 0;
     private final int roomID;
-    private final String name;
+    private String name;
 
     public Room() {
         helperID++;
@@ -26,8 +26,7 @@ public class Room {
     }
 
     private String generateRandomName() {
-        List<String> nameList = new ArrayList<>();
-        nameList.addAll(Set.of("Green", "Black", "White", "Purple", "Orange"));
+        List<String> nameList = new ArrayList<>(Set.of("Green", "Black", "White", "Purple", "Orange"));
         int randomNameIndex = random.nextInt(nameList.size());
         return nameList.get(randomNameIndex);
     }
