@@ -4,6 +4,7 @@ import com.codecool.hogwartshouses.model.Room;
 import org.springframework.stereotype.Repository;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Repository
 public class RoomMemory implements RoomDAO {
@@ -28,5 +29,11 @@ public class RoomMemory implements RoomDAO {
     public void addRoom(Room room) {
         rooms.add(new Room());
     }
+
+    @Override
+    public Room getRoom(int roomID) {
+        return rooms.stream().filter(room -> room.getRoomID() == roomID).collect(Collectors.toList()).get(0);
+    }
+
 
 }

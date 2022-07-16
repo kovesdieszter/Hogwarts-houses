@@ -21,4 +21,8 @@ public class RoomService {
         roomDAO.addRoom();
         return null;
     }
+
+    public Room getRoom(int roomID){
+        return roomDAO.getRoom(roomID);
+    }
 }
