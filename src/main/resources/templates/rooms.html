@@ -16,17 +16,17 @@
         <thead class="thead-light">
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Dummy</th>
-            <th scope="col">Dummy</th>
-            <th scope="col">Dummy</th>
+            <th scope="col">Name of Room</th>
+            <th scope="col">Student</th>
+            <th scope="col">Available</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="room : ${rooms}">
             <th scope="row" th:text="${room.roomID}"></th>
-            <td th:text="${room}"></td>
-            <td>dummy</td>
-            <td>dummy</td>
+            <td th:text="${room.name}"></td>
+            <td th:text="${room?.student?.getName()}"></td>
+            <td th:text="${room.available}"></td>
         </tr>
 
         </tbody>
