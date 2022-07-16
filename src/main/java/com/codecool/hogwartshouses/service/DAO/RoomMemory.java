@@ -1,6 +1,7 @@
 package com.codecool.hogwartshouses.service.DAO;
 
 import com.codecool.hogwartshouses.model.Room;
+import com.codecool.hogwartshouses.model.types.PetType;
 import org.springframework.stereotype.Repository;
 
 import java.util.Set;
@@ -50,6 +51,12 @@ public class RoomMemory implements RoomDAO {
     @Override
     public Set<Room> getAvailableRooms() {
         return rooms.stream().filter(Room::isAvailable)
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<Room> getRoomsWithRatOwners() {
+        return rooms.stream().filter(room -> room.getStudent().getPetType() == PetType.RAT)
                 .collect(Collectors.toSet());
     }
 

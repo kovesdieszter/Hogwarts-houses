@@ -18,4 +18,6 @@ public interface RoomDAO {
     void updateRoom(int roomID, Room updatedRoom);
     Set<Room> getAvailableRooms();
 
+    Set<Room> getRoomsWithRatOwners();
+
 }

@@ -39,4 +39,8 @@ public class RoomService {
     public Set<Room> getAvailableRooms(){
         return roomDAO.getAvailableRooms();
     }
+
+    public Set<Room> getRoomsWithRatOwners(){
+        return roomDAO.getRoomsWithRatOwners();
+    }
 }
