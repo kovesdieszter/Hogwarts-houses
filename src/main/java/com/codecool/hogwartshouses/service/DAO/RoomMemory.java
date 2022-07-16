@@ -27,7 +27,7 @@ public class RoomMemory implements RoomDAO {
 
     @Override
     public void addRoom(Room room) {
-        rooms.add(new Room());
+        rooms.add(room);
     }
 
     @Override
