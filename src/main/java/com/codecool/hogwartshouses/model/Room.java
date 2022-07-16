@@ -15,28 +15,28 @@ public class Room {
     private String name;
 
     private Student student;
-    private boolean isAvailable;
+    private boolean available;
 
     public Room(String name, Student student) {
         helperID++;
         this.roomID = helperID;
         this.name = name;
         this.student = student;
-        this.isAvailable = false;
+        this.available = false;
     }
 
     public Room() {
         helperID++;
         this.roomID = helperID;
         this.name = generateRandomName();
-        this.isAvailable = true;
+        this.available = true;
     }
 
     public Room(String name, boolean isAvailable) {
         helperID++;
         this.roomID = helperID;
         this.name = name;
-        this.isAvailable = isAvailable;
+        this.available = isAvailable;
     }
 
     private String generateRandomName() {
