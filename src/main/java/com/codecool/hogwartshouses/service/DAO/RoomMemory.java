@@ -40,5 +40,12 @@ public class RoomMemory implements RoomDAO {
         rooms.removeIf(room -> room.getRoomID() == roomID);
     }
 
+    @Override
+    public void updateRoom(int roomID, Room updatedRoom) {
+        rooms.stream().filter(room -> room.getRoomID() == roomID)
+                .findFirst()
+                .ifPresent(room -> room.setName(updatedRoom.getName()));
+    }
+
 
 }

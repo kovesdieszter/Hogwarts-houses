@@ -30,4 +30,9 @@ public class RoomService {
         roomDAO.deleteRoom(roomID);
         return null;
     }
+
+    public Object updateRoom(int roomID, Room room){
+        roomDAO.updateRoom(roomID, room);
+        return null;
+    }
 }

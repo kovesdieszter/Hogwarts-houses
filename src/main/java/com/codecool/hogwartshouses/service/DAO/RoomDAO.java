@@ -15,4 +15,6 @@ public interface RoomDAO {
 
     void deleteRoom(int roomID);
 
+    void updateRoom(int roomID, Room updatedRoom);
+
 }
