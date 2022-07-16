@@ -45,4 +45,10 @@ public class RoomController {
         return "rooms";
     }
 
+    @GetMapping(value = "/rooms/available")
+    public String getAvailableRooms(Model model){
+        model.addAttribute("rooms", roomService.getAvailableRooms());
+        return "rooms";
+    }
+
 }
