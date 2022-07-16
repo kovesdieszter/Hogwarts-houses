@@ -32,4 +32,10 @@ public class RoomController {
         return "rooms";
     }
 
+    @DeleteMapping(value = "/rooms/{roomID}")
+    public String deleteRoom(Model model, @PathVariable int roomID){
+        model.addAttribute("rooms", roomService.deleteRoom(roomID));
+        return "rooms";
+    }
+
 }
