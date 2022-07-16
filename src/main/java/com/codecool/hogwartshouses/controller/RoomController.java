@@ -1,6 +1,7 @@
 package com.codecool.hogwartshouses.controller;
 
 
+import com.codecool.hogwartshouses.model.Room;
 import com.codecool.hogwartshouses.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +36,12 @@ public class RoomController {
     @DeleteMapping(value = "/rooms/{roomID}")
     public String deleteRoom(Model model, @PathVariable int roomID){
         model.addAttribute("rooms", roomService.deleteRoom(roomID));
+        return "rooms";
+    }
+
+    @PutMapping(value = "/rooms/{roomID}")
+    public String updateRoom(Model model, @PathVariable int roomID, @RequestBody Room room){
+        model.addAttribute("rooms", roomService.updateRoom(roomID, room));
         return "rooms";
     }
 
