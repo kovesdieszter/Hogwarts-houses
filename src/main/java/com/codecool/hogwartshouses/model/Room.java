@@ -1,23 +1,34 @@
 package com.codecool.hogwartshouses.model;
 
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.*;
 
-import java.util.UUID;
 
-@Data
 @ToString
-//@NoArgsConstructor
-//@Builder
+@Data
 public class Room {
+    Random random = new Random();
     private static int helperID = 0;
-    private int roomID;
+    private final int roomID;
+    private final String name;
 
     public Room() {
         helperID++;
         this.roomID = helperID;
+        this.name = generateRandomName();
+    }
+
+    public Room(String name) {
+        this.roomID = helperID;
+        this.name = name;
+    }
+
+    private String generateRandomName() {
+        List<String> nameList = new ArrayList<>();
+        nameList.addAll(Set.of("Green", "Black", "White", "Purple", "Orange"));
+        int randomNameIndex = random.nextInt(nameList.size());
+        return nameList.get(randomNameIndex);
     }
 }
