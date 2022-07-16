@@ -1,17 +1,12 @@
 package com.codecool.hogwartshouses.controller;
 
 
-import com.codecool.hogwartshouses.model.Room;
 import com.codecool.hogwartshouses.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Set;
 
 @Controller
 public class RoomController {
@@ -29,6 +24,12 @@ public class RoomController {
     public String addRoom(Model model){
         model.addAttribute("rooms", roomService.addRoom());
         return "redirect:";
+    }
+
+    @GetMapping(value = "/rooms/{roomID}")
+    public String getRoom(Model model, @PathVariable int roomID){
+        model.addAttribute("rooms", roomService.getRoom(roomID));
+        return "rooms";
     }
 
 }
