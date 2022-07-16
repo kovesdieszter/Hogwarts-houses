@@ -47,5 +47,11 @@ public class RoomMemory implements RoomDAO {
                 .ifPresent(room -> room.setName(updatedRoom.getName()));
     }
 
+    @Override
+    public Set<Room> getAvailableRooms() {
+        return rooms.stream().filter(Room::isAvailable)
+                .collect(Collectors.toSet());
+    }
+
 
 }

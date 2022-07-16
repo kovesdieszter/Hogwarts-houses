@@ -35,4 +35,8 @@ public class RoomService {
         roomDAO.updateRoom(roomID, room);
         return null;
     }
+
+    public Set<Room> getAvailableRooms(){
+        return roomDAO.getAvailableRooms();
+    }
 }
