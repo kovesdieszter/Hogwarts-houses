@@ -13,4 +13,6 @@ public interface RoomDAO {
 
     Room getRoom(int roomID);
 
+    void deleteRoom(int roomID);
+
 }

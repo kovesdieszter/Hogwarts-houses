@@ -25,4 +25,9 @@ public class RoomService {
     public Room getRoom(int roomID){
         return roomDAO.getRoom(roomID);
     }
+
+    public Object deleteRoom(int roomID){
+        roomDAO.deleteRoom(roomID);
+        return null;
+    }
 }

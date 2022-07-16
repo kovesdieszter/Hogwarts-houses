@@ -35,5 +35,10 @@ public class RoomMemory implements RoomDAO {
         return rooms.stream().filter(room -> room.getRoomID() == roomID).collect(Collectors.toList()).get(0);
     }
 
+    @Override
+    public void deleteRoom(int roomID) {
+        rooms.removeIf(room -> room.getRoomID() == roomID);
+    }
+
 
 }
