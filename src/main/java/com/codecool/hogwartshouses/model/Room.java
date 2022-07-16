@@ -14,15 +14,29 @@ public class Room {
     private final int roomID;
     private String name;
 
+    private Student student;
+    private boolean isAvailable;
+
+    public Room(String name, Student student) {
+        helperID++;
+        this.roomID = helperID;
+        this.name = name;
+        this.student = student;
+        this.isAvailable = false;
+    }
+
     public Room() {
         helperID++;
         this.roomID = helperID;
         this.name = generateRandomName();
+        this.isAvailable = true;
     }
 
-    public Room(String name) {
+    public Room(String name, boolean isAvailable) {
+        helperID++;
         this.roomID = helperID;
         this.name = name;
+        this.isAvailable = isAvailable;
     }
 
     private String generateRandomName() {
