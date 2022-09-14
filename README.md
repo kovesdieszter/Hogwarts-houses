@@ -20,6 +20,6 @@
 
 ## Getting Started
 
-- Clone the repository using the command `https://github.com/kovesdieszter/Hogwarts-houses.git`.
+- Clone the repository using the command git clone `https://github.com/kovesdieszter/Hogwarts-houses.git`.
 - Install all necessary packages asked by your IDE.
 - Run `HogwartsHousesApplication.java` and type `http://localhost:8080/` to your browser.
