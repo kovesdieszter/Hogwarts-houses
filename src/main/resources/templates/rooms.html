@@ -24,11 +24,11 @@
         </thead>
         <tbody>
         <tr th:each="room : ${rooms}">
-            <th scope="row" th:text="${room.roomID}"></th>
+            <td th:text="${room.roomID}"></td>
             <td th:text="${room.name}"></td>
             <td th:text="${room?.student?.getName()}"></td>
             <td th:text="${room?.student?.getPetType()}"></td>
-            <td th:text="${room.available}"></td>
+            <td th:text="${room.available} ? '✓' : 'x' "></td>
         </tr>
 
         </tbody>
