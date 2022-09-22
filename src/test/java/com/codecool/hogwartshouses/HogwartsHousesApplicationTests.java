@@ -25,16 +25,11 @@ class HogwartsHousesApplicationTests {
 	}
 
 	@Test
-	void getRoomsWithRoomsTest(){
-		testRooms.addAll(Set.of(new Room(), new Room("Room1", false), new Room("Room2", true)));
-		assertEquals(3, roomMemory.getRooms().size());
-	}
-
-	@Test
 	void getRoomByIdTest() {
-		Room testRoom = new Room("Purple", true);
+		Room testRoom = new Room("Test", true);
+		testRoom.setRoomID(99);
 		roomMemory.addRoom(testRoom);
-		assertEquals(roomMemory.getRoom(7), testRoom);
+		assertEquals(testRoom, roomMemory.getRoom(99));
 	}
 
 	@Test
@@ -47,19 +42,23 @@ class HogwartsHousesApplicationTests {
 
 	@Test
 	void deleteRoomTest(){
-		testRooms.addAll(Set.of(new Room(), new Room("Room1", false), new Room("Room2", true)));
+		Room testRoom = new Room("Test", true);
+		testRoom.setRoomID(99);
+		testRooms.addAll(Set.of(new Room(), new Room("Room1", false), new Room("Room2", true), testRoom));
 		int sizeOfRooms = roomMemory.getRooms().size();
-		roomMemory.deleteRoom(19);
+		roomMemory.deleteRoom(99);
 		assertEquals(sizeOfRooms - 1, roomMemory.getRooms().size());
 	}
 
 	@Test
 	void updateRoomTest() {
-		roomMemory.addRoom(new Room("Green", true));
-		Room modifiedRoom = roomMemory.getRoom(15);
+		Room greenRoom = new Room("Green", true);
+		greenRoom.setRoomID(99);
+		roomMemory.addRoom(greenRoom);
+		Room modifiedRoom = roomMemory.getRoom(99);
 		modifiedRoom.setName("TEST");
-		roomMemory.updateRoom(10, modifiedRoom);
-		assertEquals(roomMemory.getRoom(15).getName(), "TEST");
+		roomMemory.updateRoom(99, modifiedRoom);
+		assertEquals(roomMemory.getRoom(99).getName(), "TEST");
 	}
 
 	@Test
@@ -80,12 +79,10 @@ class HogwartsHousesApplicationTests {
 
 	@Test
 	void getRoomsWithRatOwnersTest() {
-	testRooms.addAll(Set.of(
-			new Room(),
-			new Room("Room1", new Student("Ronny", PetType.RAT)),
-			new Room("Room2", new Student("Ron", PetType.CAT))));
+		testRooms.addAll(Set.of(
+				new Room(),
+				new Room("Room1", new Student("Ronny", PetType.RAT)),
+				new Room("Room2", new Student("Ron", PetType.CAT))));
 		assertEquals(1, roomMemory.getRoomsWithRatOwners().size());
 	}
-
-
 }
