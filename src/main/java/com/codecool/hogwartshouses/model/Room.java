@@ -11,7 +11,7 @@ import java.util.*;
 public class Room {
     Random random = new Random();
     private static int helperID = 0;
-    private final int roomID;
+    private int roomID;
     private String name;
 
     private Student student;
